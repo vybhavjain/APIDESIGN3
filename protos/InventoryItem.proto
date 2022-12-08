@@ -1,0 +1,21 @@
+syntax = "proto3"
+
+message Book {
+    //International Standard Book Number is a unique String assigned to each book and will be used as our primary key
+    required string ISBN; 
+    required string title;
+
+    //Implement this as a seperate PB and import it
+    required string author;
+    optional string rating;
+
+    
+    required integer publishing_year; 
+
+    enum Genre{
+        HORROR = 0;
+        ROMANTIC = 1;
+        THRILLER = 2;
+        FICTION = 3;
+    }    
+}
