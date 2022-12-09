@@ -1,21 +1,66 @@
-syntax = "proto3"
+syntax = "proto3";
+
+//Enum type for different type of Genre
+enum Genre{
+    FICTION = 0;
+    ROMANTIC = 1;
+    THRILLER = 2;
+    HORROR = 3;
+}    
+
+//Numbering 1-15 is used for more frequently occuring parameters. And take 1 byte for encoding
+message ISBN{
+        //International Standard Book Number is a unique String assigned to each book and will be used as our primary key
+        string ISBN = 1; 
+}
+
+
+message TITLE{
+    //Stores the title of the book
+    string title = 1; 
+}
+
+
+message AUTHOR{
+    //Stores the name of the author
+    string author = 1; 
+}
+
+
+message PUBLISHING_YEAR{
+    //Value of the year in which the book was published
+    int64 publishing_year = 5; 
+}
+
 
 message Book {
-    //International Standard Book Number is a unique String assigned to each book and will be used as our primary key
-    required string ISBN; 
-    required string title;
-
-    //Implement this as a seperate PB and import it
-    required string author;
-    optional string rating;
-
-    
-    required integer publishing_year; 
-
-    enum Genre{
-        HORROR = 0;
-        ROMANTIC = 1;
-        THRILLER = 2;
-        FICTION = 3;
-    }    
+    ISBN isbn = 1;
+    TITLE title = 2;
+    AUTHOR author = 3;
+    string rating = 4;
+    PUBLISHING_YEAR publishing_year = 5; 
+    Genre genre = 6;
 }
+
+enum Status{
+    taken = 0;
+    available = 1;
+}    
+
+message InventoryItem {
+
+    string Inventory_number = 9; 
+    Status status = 10;
+
+    oneof testoneof {
+        Book book_object = 11;
+    }
+  
+}
+
+service Functionality{
+    rpc getBook(ISBN) returns (Book);
+    rpc createBook(Book) returns (ISBN);
+}
+
+//python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. Book.proto
