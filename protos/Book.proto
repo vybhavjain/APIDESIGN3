@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 //Enum type for different type of Genre
-enum Genre{
+enum GENRE{
     FICTION = 0;
     ROMANTIC = 1;
     THRILLER = 2;
@@ -14,32 +14,19 @@ message ISBN{
         string ISBN = 1; 
 }
 
-
-message TITLE{
-    //Stores the title of the book
-    string title = 1; 
-}
-
-
-message AUTHOR{
-    //Stores the name of the author
-    string author = 1; 
-}
-
-
-message PUBLISHING_YEAR{
-    //Value of the year in which the book was published
-    int64 publishing_year = 5; 
-}
-
-
 message Book {
-    ISBN isbn = 1;
-    TITLE title = 2;
-    AUTHOR author = 3;
-    string rating = 4;
-    PUBLISHING_YEAR publishing_year = 5; 
-    Genre genre = 6;
+    string isbn = 1;
+
+    //Stores the title of the book
+    string title = 2;
+
+    //Stores the name of the author
+    string author = 3;
+    int32 rating = 4;
+
+    //Value of the year in which the book was published
+    int32 publishing_year = 5; 
+    GENRE genre = 6;
 }
 
 enum Status{
@@ -59,8 +46,8 @@ message InventoryItem {
 }
 
 service Functionality{
-    rpc getBook(ISBN) returns (Book);
-    rpc createBook(Book) returns (ISBN);
+    rpc getBook(ISBN) returns (Book) {};
+    rpc createBook(Book) returns (ISBN) {};
 }
 
-//python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. Book.proto
+//python3 -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. Book.proto

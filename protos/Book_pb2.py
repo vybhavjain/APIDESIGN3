@@ -13,29 +13,23 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nBook.proto\"\x14\n\x04ISBN\x12\x0c\n\x04ISBN\x18\x01 \x01(\t\"\x16\n\x05TITLE\x12\r\n\x05title\x18\x01 \x01(\t\"\x18\n\x06\x41UTHOR\x12\x0e\n\x06\x61uthor\x18\x01 \x01(\t\"*\n\x0fPUBLISHING_YEAR\x12\x17\n\x0fpublishing_year\x18\x05 \x01(\x03\"\x9d\x01\n\x04\x42ook\x12\x13\n\x04isbn\x18\x01 \x01(\x0b\x32\x05.ISBN\x12\x15\n\x05title\x18\x02 \x01(\x0b\x32\x06.TITLE\x12\x17\n\x06\x61uthor\x18\x03 \x01(\x0b\x32\x07.AUTHOR\x12\x0e\n\x06rating\x18\x04 \x01(\t\x12)\n\x0fpublishing_year\x18\x05 \x01(\x0b\x32\x10.PUBLISHING_YEAR\x12\x15\n\x05genre\x18\x06 \x01(\x0e\x32\x06.Genre\"m\n\rInventoryItem\x12\x18\n\x10Inventory_number\x18\t \x01(\t\x12\x17\n\x06status\x18\n \x01(\x0e\x32\x07.Status\x12\x1c\n\x0b\x62ook_object\x18\x0b \x01(\x0b\x32\x05.BookH\x00\x42\x0b\n\ttestoneof*<\n\x05Genre\x12\x0b\n\x07\x46ICTION\x10\x00\x12\x0c\n\x08ROMANTIC\x10\x01\x12\x0c\n\x08THRILLER\x10\x02\x12\n\n\x06HORROR\x10\x03*\"\n\x06Status\x12\t\n\x05taken\x10\x00\x12\r\n\tavailable\x10\x01\x32\x44\n\rFunctionality\x12\x17\n\x07getBook\x12\x05.ISBN\x1a\x05.Book\x12\x1a\n\ncreateBook\x12\x05.Book\x1a\x05.ISBNb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nBook.proto\"\x14\n\x04ISBN\x12\x0c\n\x04ISBN\x18\x01 \x01(\t\"s\n\x04\x42ook\x12\x0c\n\x04isbn\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x03 \x01(\t\x12\x0e\n\x06rating\x18\x04 \x01(\x05\x12\x17\n\x0fpublishing_year\x18\x05 \x01(\x05\x12\x15\n\x05genre\x18\x06 \x01(\x0e\x32\x06.GENRE\"m\n\rInventoryItem\x12\x18\n\x10Inventory_number\x18\t \x01(\t\x12\x17\n\x06status\x18\n \x01(\x0e\x32\x07.Status\x12\x1c\n\x0b\x62ook_object\x18\x0b \x01(\x0b\x32\x05.BookH\x00\x42\x0b\n\ttestoneof*<\n\x05GENRE\x12\x0b\n\x07\x46ICTION\x10\x00\x12\x0c\n\x08ROMANTIC\x10\x01\x12\x0c\n\x08THRILLER\x10\x02\x12\n\n\x06HORROR\x10\x03*\"\n\x06Status\x12\t\n\x05taken\x10\x00\x12\r\n\tavailable\x10\x01\x32H\n\rFunctionality\x12\x19\n\x07getBook\x12\x05.ISBN\x1a\x05.Book\"\x00\x12\x1c\n\ncreateBook\x12\x05.Book\x1a\x05.ISBN\"\x00\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'Book_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _GENRE._serialized_start=401
-  _GENRE._serialized_end=461
-  _STATUS._serialized_start=463
-  _STATUS._serialized_end=497
+  _GENRE._serialized_start=264
+  _GENRE._serialized_end=324
+  _STATUS._serialized_start=326
+  _STATUS._serialized_end=360
   _ISBN._serialized_start=14
   _ISBN._serialized_end=34
-  _TITLE._serialized_start=36
-  _TITLE._serialized_end=58
-  _AUTHOR._serialized_start=60
-  _AUTHOR._serialized_end=84
-  _PUBLISHING_YEAR._serialized_start=86
-  _PUBLISHING_YEAR._serialized_end=128
-  _BOOK._serialized_start=131
-  _BOOK._serialized_end=288
-  _INVENTORYITEM._serialized_start=290
-  _INVENTORYITEM._serialized_end=399
-  _FUNCTIONALITY._serialized_start=499
-  _FUNCTIONALITY._serialized_end=567
+  _BOOK._serialized_start=36
+  _BOOK._serialized_end=151
+  _INVENTORYITEM._serialized_start=153
+  _INVENTORYITEM._serialized_end=262
+  _FUNCTIONALITY._serialized_start=362
+  _FUNCTIONALITY._serialized_end=434
 # @@protoc_insertion_point(module_scope)
