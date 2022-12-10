@@ -1,5 +1,5 @@
 //Command to run the proto for this file:
-//python3 -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. Book.proto
+//python3 -m grpc_tools.protoc -I. --python_out=../Service --pyi_out=../Service --grpc_python_out=../Service Book.proto
 
 syntax = "proto3";
 

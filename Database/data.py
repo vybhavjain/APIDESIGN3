@@ -1,5 +1,8 @@
 #File containing the List with pre recorded data about different available books in the Library
-from Protos import Book_pb2
+#We store the existing books in this file and import this value in the server file to add new books/check existing books in the
+#Library system
+
+from Service import Book_pb2
 
 #Creating a sample book to add to the library system
 book1 = Book_pb2.Book(

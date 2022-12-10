@@ -2,10 +2,6 @@ README.md
 setup.py
 Database/__init__.py
 Database/data.py
-Database.egg-info/PKG-INFO
-Database.egg-info/SOURCES.txt
-Database.egg-info/dependency_links.txt
-Database.egg-info/top_level.txt
 Protos/Server.py
 Protos/__init__.py
 Service/Book_pb2.py
@@ -13,3 +9,7 @@ Service/Book_pb2_grpc.py
 Service/Inventory_system_pb2.py
 Service/Inventory_system_pb2_grpc.py
 Service/__init__.py
+Service.egg-info/PKG-INFO
+Service.egg-info/SOURCES.txt
+Service.egg-info/dependency_links.txt
+Service.egg-info/top_level.txt
