@@ -1,0 +1,24 @@
+//Command to run the proto for this file:
+//python3 -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. Inventory_system.proto
+
+syntax = "proto3";
+
+import "Book.proto";
+
+//To check the status of availibility
+enum Status{
+    taken = 0;
+    available = 1;
+}    
+
+//Creating a Oneof of the Inventory Item
+message InventoryItem {
+
+    string Inventory_number = 9; 
+    Status status = 10;
+
+    oneof testoneof {
+        Book book_object = 11;
+    }
+  
+}

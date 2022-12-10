@@ -1,3 +1,6 @@
+//Command to run the proto for this file:
+//python3 -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. Book.proto
+
 syntax = "proto3";
 
 //Enum type for different type of Genre
@@ -8,13 +11,16 @@ enum GENRE{
     HORROR = 3;
 }    
 
-//Numbering 1-15 is used for more frequently occuring parameters. And take 1 byte for encoding
+//Numbering 1-15 is used for more frequently occuring parameters. And take 1 byte for encoding. Since we want fast access we
+//use numbers from between 1-15
+
 message ISBN{
         //International Standard Book Number is a unique String assigned to each book and will be used as our primary key
         string ISBN = 1; 
 }
 
 message Book {
+    //Stores the ISBN of the book 
     string isbn = 1;
 
     //Stores the title of the book
@@ -29,25 +35,10 @@ message Book {
     GENRE genre = 6;
 }
 
-enum Status{
-    taken = 0;
-    available = 1;
-}    
-
-message InventoryItem {
-
-    string Inventory_number = 9; 
-    Status status = 10;
-
-    oneof testoneof {
-        Book book_object = 11;
-    }
-  
-}
-
 service Functionality{
+    //Function that returns the book object based on the ISBN value
     rpc getBook(ISBN) returns (Book) {};
+
+    //Function that creates a new book and returns a confirmation string with the ISBN number entered
     rpc createBook(Book) returns (ISBN) {};
 }
-
-//python3 -m grpc_tools.protoc -I. --python_out=. --pyi_out=. --grpc_python_out=. Book.proto
