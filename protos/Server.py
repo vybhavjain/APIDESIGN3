@@ -13,6 +13,11 @@ class BookOperations(Book_pb2_grpc.FunctionalityServicer):
 
     #Implementation of getBook to retrieve data based on the ISBN value
     def getBook(self, request, context):
+        if len(list_of_books) == 0:
+            context.set_code(grpc.StatusCode.DATA_LOSS)
+            context.set_details('The DB is empty')
+            return Book_pb2.Book()
+
         for book in list_of_books:
             if book.isbn == request.ISBN:
                 return Book_pb2.Book(
