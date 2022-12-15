@@ -2,8 +2,8 @@ from concurrent import futures
 import logging
 
 import grpc
-import Service.Book_pb2 as Book_pb2 
-import Service.Book_pb2_grpc as Book_pb2_grpc
+import Book_pb2 
+import Book_pb2_grpc
 from Database import data as db
 
 #List of books is stored in a seperate file
@@ -69,8 +69,8 @@ Sample input for createBook
   "isbn":"abcd-1234",
   "title":"Title1",
   "author":"author1",
-  "rating":"5",
-  "publishing_year":"2012", 
+  "rating":5,
+  "publishing_year":2012, 
   "genre":"THRILLER"
 }
 
