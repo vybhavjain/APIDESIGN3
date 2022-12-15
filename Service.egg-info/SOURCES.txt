@@ -2,12 +2,12 @@ README.md
 setup.py
 Database/__init__.py
 Database/data.py
-Protos/Server.py
 Protos/__init__.py
 Service/Book_pb2.py
 Service/Book_pb2_grpc.py
 Service/Inventory_system_pb2.py
 Service/Inventory_system_pb2_grpc.py
+Service/Server.py
 Service/__init__.py
 Service.egg-info/PKG-INFO
 Service.egg-info/SOURCES.txt

@@ -6,3 +6,4 @@ from setuptools import setup, find_packages
 setup(name = "Database", packages = find_packages())
 setup(name = "Protos", packages = find_packages())
 setup(name = "Service", packages = find_packages())
+setup(name = "Client", packages = find_packages())
